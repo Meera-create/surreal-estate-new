@@ -1,10 +1,11 @@
 
 import React from 'react';
- import NavBar from './Navbar';
+
 import {Routes, Route} from 'react-router-dom'
 import Properties from './Properties';
 import AddProperty from './AddProperty';
-import PropertyCard from './PropertyCard';
+import Home from './Home';
+
 
 
 
@@ -18,12 +19,12 @@ const App = () => {
     <div className="App">
       
     
-      <NavBar />
+      
         <Routes>
-        <Route path="/" element={<Properties />} />
+        <Route path="/" element={<Home />} />
     
         <Route path="/add-property" element={<AddProperty />} />
-        <Route path="/property-card" element={<PropertyCard />} />
+        <Route path="/properties" element={<Properties />} />
         
         
         </Routes>

@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+
+
+//colours
+$background-main:#d82946;
+$hover:white;
+$background-secondary:#77A0A9;
+$navbarBackground:#dd841f;
+$highlight:white;
+$hover-text:rgb(172, 66, 5);
+$circles:orange;
+$black:black;
+$preloader:rgb(44, 108, 228);
+
+//text
+$primaryHeader: rgb(35, 78, 78);
+$subHeading: rgb(42, 77, 42);
+$paragraphs:rgb(91, 180, 91);
+
+//font size
+$main-large:3rem;
+$main-med:2.5rem;
+$main-small: 2rem;
+$subheader:1.5rem;
+$para:1.2rem;
+$navbar:1.3rem;
+
+//font-family
+$font-family:"Quicksand", sans-serif;
+
+
+//break points
+$break-points:(
+    'regular':(
+        min-width:768px,
+    ),
+    'large':(
+        min-width:1024px,
+    ),
+    'extra-large':(
+        min-width:1280px,
+    ),
+);
+
+//spacing:
+$spacing-small:0.5rem;
+$spacing-medium:0.8rem;
+$spacing-large:1rem;
+$spacing-extraLarge:1.2rem;
+$top:5rem;

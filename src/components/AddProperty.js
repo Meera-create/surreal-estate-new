@@ -1,6 +1,8 @@
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
-import React,{useState} from "react";
+import React, { useState } from "react";
+import '../../src/styles/addProperties.scss';
+ import NavBar from './Navbar';
 
 const AddProperty = () => {
 
@@ -86,7 +88,10 @@ const AddProperty = () => {
  
         return (
             <div>
-                <h1>add property</h1>
+                <NavBar/>
+                <h1>Property Additions</h1>
+                <h2>Use this page to display your own properties to possible buyers.</h2>
+                <h3>Just fill out the form below and click submit</h3>
 
           
                 <form className="adding-properties-form" onSubmit={submitForm} >
@@ -102,6 +107,7 @@ const AddProperty = () => {
                             name="title"
                             value={title}
                             onChange={titleChange}
+                            required
                         />
                     </div>
 
@@ -112,6 +118,7 @@ const AddProperty = () => {
                             name="city"
                             value={city}
                             onChange={cityChange}
+                            required
                         >
                             <option value="Manchester">Manchester</option>
                             <option value="Leeds">Leeds</option>
@@ -148,6 +155,7 @@ const AddProperty = () => {
                             name="bedrooms"
                             value={bedrooms}
                             onChange={bedroomChange}
+                            required
                         />
                     </div>
 
@@ -159,6 +167,7 @@ const AddProperty = () => {
                             name="bathrooms"
                             value={bathrooms}
                             onChange={bathroomChange}
+                            required
                         />
                     </div>
 
@@ -181,6 +190,7 @@ const AddProperty = () => {
                             name="email"
                             value={email}
                             onChange={emailChange}
+                            required
                         />
                     </div> 
 

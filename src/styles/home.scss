@@ -1,0 +1,38 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+body{
+    margin:0;
+    padding:0;
+}
+
+
+
+.home-page{
+    img{
+        height:100vh;
+        opacity: 30%;
+        width:100%;
+        z-index:-50;
+        position:relative;
+
+    }
+    .home{
+        @include flexBox(center,column);
+       margin-top:-33rem;
+        
+        z-index:99;
+        h1{
+            font-size: $main-med;
+        }
+        h2{
+            font-size: $main-small;
+        }
+        h3{
+            font-size: $subheader;
+        }
+    }
+  
+}
+
+

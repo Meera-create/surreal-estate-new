@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import '../../src/styles/navbar.scss';
 
 
 
@@ -11,7 +12,7 @@ const NavBar = () => {
                
                     
                     
-                        <NavLink to="/property-card">View Properties</NavLink>
+                        <NavLink to="/properties">View Properties</NavLink>
                 <NavLink to="/add-property">Add a property</NavLink>
                
                  
