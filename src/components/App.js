@@ -7,8 +7,11 @@ import AddProperty from './AddProperty';
 import PropertyCard from './PropertyCard';
 
 
+
 const App = () => {
   
+
+
 
 
   return (
@@ -20,7 +23,8 @@ const App = () => {
         <Route path="/" element={<Properties />} />
     
         <Route path="/add-property" element={<AddProperty />} />
-        <Route path = "/property-card" element={<PropertyCard /> } />
+        <Route path="/property-card" element={<PropertyCard />} />
+        
         
         </Routes>
           
