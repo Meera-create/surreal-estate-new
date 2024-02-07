@@ -10,8 +10,9 @@ import '../../src/styles/properties.scss';
 import NavBar from './Navbar';
 import endterrace from '../../src/images/endterrace.jpg';
 import bungalow from '../../src/images/bungalow.jpg';
+import SearchBar from './SearchBar';
 
-const Properties = () => {
+const Properties = (searchCity) => {
 
     const [properties, setProperties] = useState([])
 
@@ -41,23 +42,27 @@ const Properties = () => {
 },[fetchData])
     
     
-
-
-
+const [data, setData] = useState(properties)
 
     return (
         <div className="properties-page">
             <NavBar/>
-            
+            <SearchBar
+                data={data}
+                setData={setData}
+            />
             
             <h1 className="title-page">List of Properties</h1>
            
             <div className='properties-data'>
                 
 
+        
+
+
                 {
                     properties.map((property, i) => (
-                        
+                      
                         <ul key={i}>
                             <li>
                                 <h3>Property</h3>

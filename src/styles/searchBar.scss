@@ -1,0 +1,6 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.search-bar{
+    @include flexBox(flex-start,column);
+}
