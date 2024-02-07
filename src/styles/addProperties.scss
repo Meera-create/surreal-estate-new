@@ -3,4 +3,6 @@
 
 .adding-properties-form{
     @include flexBox(center,column);
+    background-color: $background-secondary;
+    height:100vh;
 }

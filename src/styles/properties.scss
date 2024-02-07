@@ -1,2 +1,24 @@
 @import './variables.scss';
 @import './mixins.scss';
+
+.properties-page{
+    background-color: $background-secondary;
+    height:100vh;
+    .properties-data{
+        @include flexBox(center,row);
+        list-style-type: none;
+        ul{
+            
+    background-color: $button;
+    padding: 1rem;
+    border: 1px solid $black;
+    margin: 3rem;
+        }
+        
+        img{
+            height:25vh;
+            border:5px solid $border;
+        }
+    }
+
+}

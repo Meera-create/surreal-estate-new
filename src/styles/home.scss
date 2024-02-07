@@ -31,6 +31,20 @@ body{
         h3{
             font-size: $subheader;
         }
+
+        a{
+    
+    text-decoration: none;
+    color: $button;
+    padding: 1rem;
+    background-color: $hover-button;
+    &:hover{
+        color:$hover;
+        background-color: $black;
+
+    }
+}
+        
     }
   
 }
