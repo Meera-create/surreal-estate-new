@@ -10,7 +10,7 @@ import '../../src/styles/properties.scss';
 import NavBar from './Navbar';
 import endterrace from '../../src/images/endterrace.jpg';
 import bungalow from '../../src/images/bungalow.jpg';
-import SearchBar from './SearchBar';
+import SearchBar from './SearchBar.js';
 
 const Properties = (searchCity) => {
 
@@ -101,4 +101,3 @@ const [data, setData] = useState(properties)
 
 
 export default Properties;
-
