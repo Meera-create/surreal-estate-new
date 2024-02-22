@@ -2,5 +2,16 @@
 @import './mixins.scss';
 
 .search-bar{
-    @include flexBox(flex-start,column);
+    //@include flexBox(flex-start,column);
+    background-color: skyblue;
+    border-top: 5px solid #4f4f71;
+    border-bottom: 5px solid #4f4f71;
+}
+
+.search-by-city {
+    padding-left: 1rem;
+}
+
+.search.button{
+    @include flexBox(center,row);
 }

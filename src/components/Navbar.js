@@ -12,8 +12,8 @@ const NavBar = () => {
                
                     
                     
-                        <NavLink to="/properties">View Properties</NavLink>
-                <NavLink to="/add-property">Add a property</NavLink>
+                        <NavLink to="/properties">VIEW PROPERTIES</NavLink>
+                <NavLink to="/add-property">ADD A PROPERTY</NavLink>
                
                  
                     

@@ -2,7 +2,8 @@ import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import React, { useState } from "react";
 import '../../src/styles/addProperties.scss';
- import NavBar from './Navbar';
+import NavBar from './Navbar';
+import toast,{ Toaster } from 'react-hot-toast';
 
 const AddProperty = () => {
 
@@ -59,6 +60,7 @@ const AddProperty = () => {
     const submitForm =  async (event) => {
         event.preventDefault();
         console.log('form submit')
+        toast("Your property has been added to the database!")
 
      
                     try {
@@ -88,6 +90,7 @@ const AddProperty = () => {
  
         return (
             <div>
+                <Toaster/>
                 <NavBar/>
                 <h1>Property Additions</h1>
                 <h2>Use this page to display your own properties to possible buyers.</h2>
@@ -97,9 +100,9 @@ const AddProperty = () => {
                 <form className="adding-properties-form" onSubmit={submitForm} >
                     
      
-                    <div className="title">ADD A PROPERTY</div>
+                    <div className="title input">ADD A PROPERTY</div>
 
-                    <div id="boxes">
+                    <div id="boxes" className="input">
                         <label htmlFor="title">Title of Property</label>
                         <input
                             placeholder="2 bedroom house"
@@ -111,7 +114,7 @@ const AddProperty = () => {
                         />
                     </div>
 
-                    <div id="boxes">
+                    <div id="boxes" className="input">
                         <label htmlFor="city">City </label>
                         <select
                             id="city"
@@ -128,7 +131,7 @@ const AddProperty = () => {
                         </select>
                     </div>
 
-                    <div id="boxes">
+                    <div id="boxes" className="input">
                         <label htmlFor="type">Type of Property</label>
                         <select
                             id="type"
@@ -146,7 +149,7 @@ const AddProperty = () => {
                         </select>
                     </div>
 
-                    <div id="boxes">
+                    <div id="boxes" className="input">
                         <label htmlFor="bedrooms"></label>
                         Number of Bedrooms
                         <input
@@ -159,7 +162,7 @@ const AddProperty = () => {
                         />
                     </div>
 
-                    <div id="boxes">
+                    <div id="boxes" className="input">
                         <label htmlFor="bathrooms">Number of bathrooms</label>
                         <input
                             id="bathrooms"
@@ -171,7 +174,7 @@ const AddProperty = () => {
                         />
                     </div>
 
-                    <div id="boxes">
+                    <div id="boxes" className="input">
                         <label htmlFor="price">Price</label>
                         <input
                             id="price"
@@ -182,7 +185,7 @@ const AddProperty = () => {
                         />
                     </div>
 
-                    <div id="boxes">
+                    <div id="boxes" className="input">
                         <label htmlFor="email">Email address</label>
                         <input
                             id="email"
@@ -194,7 +197,9 @@ const AddProperty = () => {
                         />
                     </div> 
 
-                    <button type="submit" >Add</button>
+                    <div className="input">
+                        <button type="submit" >Add</button>
+                        </div>
                 </form>
             </div>
         );

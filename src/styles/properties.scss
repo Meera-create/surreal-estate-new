@@ -1,9 +1,13 @@
 @import './variables.scss';
 @import './mixins.scss';
 
+body{
+    background-color:$background-secondary;
+}
+
 .properties-page{
-    background-color: $background-secondary;
-    height:100vh;
+    
+    
     .properties-data{
         @include flexBox(center,row);
         list-style-type: none;

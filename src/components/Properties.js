@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, {  useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebase/firebase';
 import terraced from '../../src/images/house1.jpeg';
@@ -12,44 +12,50 @@ import endterrace from '../../src/images/endterrace.jpg';
 import bungalow from '../../src/images/bungalow.jpg';
 import SearchBar from './SearchBar.js';
 
-const Properties = (searchCity) => {
 
-    const [properties, setProperties] = useState([])
+const Properties = ({ properties, setProperties, filtered, setFiltered }) => {
 
     
 
-    const fetchData = useCallback(async () => {
-            
+    
+    console.log('properties', properties);
 
-       
-        await getDocs(collection(db, "properties"))
-            .then((querySnapshot) => {
-                const newData = querySnapshot.docs
-                    .map((doc) => ({ ...doc.data(), id: doc.id }))
-                setProperties(newData);
-                console.log(newData, properties, "properties")
-            })
-            .catch((error) => {
-                console.log(error)
-            })
-        
-    }, [properties]);
+    useEffect(() => {
+        const fetchData = async () => {
+          
+            await getDocs(collection(db, "properties"))
+                .then((querySnapshot) => {
+                    const newData = querySnapshot.docs
+                        .map((doc) => ({ ...doc.data(), id: doc.id }))
+                    setProperties(newData);
+                    console.log(newData, properties, "properties")
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+        }
+        fetchData();
+    
+    },[properties,setProperties])
+    
+    
     
     // const catchedFn = useCallback(fetchData,properties)
         
-    useEffect(() => {
-        fetchData();
-},[fetchData])
+   
+      
+
     
     
-const [data, setData] = useState(properties)
 
     return (
         <div className="properties-page">
             <NavBar/>
             <SearchBar
-                data={data}
-                setData={setData}
+                properties={properties}
+                setProperties={setProperties}
+                filtered={filtered}
+                setFiltered={setFiltered}
             />
             
             <h1 className="title-page">List of Properties</h1>
@@ -59,7 +65,26 @@ const [data, setData] = useState(properties)
 
         
 
+{/* 
+                {filtered &&              
+                    filtered.map((filteredProps, i) => (
+                         <ul key={i}>
+                            <li>
+                                <h3>Property</h3>
+                            </li>
+                            <li>Property: {filteredProps.title}</li>
+                            <li>Type: {filteredProps.type}</li>
+                            <li>City: {filteredProps.city}</li>
+                            <li>Listed price: {filteredProps.price}</li>
+                            <li>Bedrooms: {filteredProps.bedrooms}</li>
+                            <li>Bathrooms: {filteredProps.bathrooms}</li>
+                            <li>Contact for more info: {filteredProps.email}</li>
 
+                            </ul>
+                        
+                    ))
+                }
+                 */}
                 {
                     properties.map((property, i) => (
                       

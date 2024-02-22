@@ -1,14 +1,22 @@
-import React from "react";
+import React,{useState} from "react";
 
-const SearchBar = ({query,setQuery}) => {
+const SearchBar = ({properties, setFiltered}) => {
 
+    const [search, setSearch] = useState('');
 
-    const queryHandler = (event) => {
+    const searchHandler = (event) => {
         event.preventDefault();
-        setQuery(event.target.value)
-    };
-    
- 
+        setSearch(event.target.value)
+
+    }
+
+
+     
+    const searchItems = (event) => {
+        setFiltered(properties.filter((property) => 
+            properties.city.includes(search)
+        ))
+    }
  
  
     return (
@@ -20,8 +28,8 @@ const SearchBar = ({query,setQuery}) => {
                         <select
                             id="city"
                             name="city"
-                            value={query}
-                            onChange={queryHandler}
+                            value={search}
+                            onChange={searchHandler}
                             
                         >
                             <option value="Manchester">Manchester</option>
@@ -36,7 +44,7 @@ const SearchBar = ({query,setQuery}) => {
             <div className="search button">
                 <button
                     type="button"
-                
+                    onSubmit={(e) => { searchItems(e) }}
                 >
                     SEARCH
                 </button>
